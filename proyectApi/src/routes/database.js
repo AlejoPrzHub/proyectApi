@@ -1,10 +1,11 @@
-let mysql = require("mysql2")
-let connection = mysql.createConnection
+const mysql = require("mysql2")
+const connection = mysql.createConnection
 ({
-        host:"127.0.0.1",
-        user:"root",
-        password:"Joseale12perez!",
-        database:"appbooks"
+        host:      process.env.DB_HOST     ||  "localhost",
+        user:      process.env.DB_USER     ||  "root",
+        password:  process.env.DB_PASSWORD ||  "Joseale12perez!",
+        database:  process.env.DB_NAME     ||  "proyectApi",
+        port:      process.env.DB_PORT     ||  3306
 });
 
 connection.connect(function(error)
