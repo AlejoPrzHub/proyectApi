@@ -15,7 +15,7 @@ app.use (function(req, res, next)
                         ({
                             error:true,
                             codigo: 404,
-                            message:"Upss, something went wrong!"
+                            message:"Endpoint doesnt found"
                         })
         })
 app.use(errorHandling);
